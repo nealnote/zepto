@@ -1,7 +1,7 @@
 VERSION=v1.1.4
 
 default: zepto
-	@cd $< && git checkout master && git pull && git checkout $(VERSION) && npm install && npm run-script dist
+	@cd $< && git checkout master && git pull && git checkout $(VERSION) && npm install && MODULES="zepto event ajax form ie callbacks deferred" npm run-script dist
 	@cp -f $</dist/zepto.js .
 	@echo ";" >> zepto.js
 	@cp -f $</dist/zepto.min.js .
